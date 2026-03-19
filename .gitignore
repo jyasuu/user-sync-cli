@@ -1,0 +1,4 @@
+/target
+.env
+*.log
+user-sync-cli.tar.gz
