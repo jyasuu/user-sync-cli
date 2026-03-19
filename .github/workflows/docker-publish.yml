@@ -41,7 +41,7 @@ jobs:
       id: meta2
       uses: docker/metadata-action@v5
       with:
-        images: ${{ secrets.DOCKER_USERNAME }}/${{ github.event.repository.name }}
+        images: ${{ github.actor }}/${{ github.event.repository.name }}
         
     - name: Build and push to Docker Hub
       uses: docker/build-push-action@v5
