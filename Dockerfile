@@ -8,6 +8,7 @@ COPY Cargo.toml Cargo.lock ./
 
 # Copy source code
 COPY ./src ./src
+COPY ./migrations ./migrations
 
 # 1. Install the C toolchain for musl
 RUN apt-get update && apt-get install -y \
