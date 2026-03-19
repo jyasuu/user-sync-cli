@@ -38,19 +38,18 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Extract Docker metadata
-      id: meta2
+      id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ${{ github.actor }}/${{ github.event.repository.name }}
-        
-    - name: Build and push to Docker Hub
+        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+    - name: Build and push to GHCR
       uses: docker/build-push-action@v5
       with:
+        context: .
         push: ${{ github.event_name != 'pull_request' }}
-        tags: ${{ steps.meta2.outputs.tags }}
-        labels: ${{ steps.meta2.outputs.labels }}
-
-
+        tags: ${{ steps.meta.outputs.tags }}
+        labels: ${{ steps.meta.outputs.labels }}
 
 
         
