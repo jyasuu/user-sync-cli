@@ -6,10 +6,10 @@ use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 pub struct UsersResponse {
-    pub _timestamp: i64,
-    pub _status_code: i64,
+    pub timestamp: i64,
+    pub status_code: i64,
     pub data: Vec<User>,
-    pub _statistic: Option<serde_json::Value>,
+    pub statistic: Option<serde_json::Value>,
 }
 
 #[derive(Debug, Deserialize, Clone)]
@@ -32,7 +32,7 @@ pub struct User {
     pub lo_dept_nm: Option<String>,
     pub tel: Option<String>,
     pub leave_mk: Option<String>,
-    pub _enable_time: Option<i64>,
+    pub enable_time: Option<i64>,
     pub acct_type: Option<i64>,
 }
 
