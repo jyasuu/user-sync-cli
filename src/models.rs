@@ -7,7 +7,7 @@ use serde::Deserialize;
 #[derive(Debug, Deserialize)]
 pub struct UsersResponse {
     pub timestamp: i64,
-    pub status_code: i64,
+    pub status_code: Option<i64>,
     pub data: Vec<User>,
     pub statistic: Option<serde_json::Value>,
 }
